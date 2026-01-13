@@ -7,29 +7,20 @@ updates:
       interval: "weekly"
       day: "monday"
       time: "09:00"
+      timezone: "Asia/Riyadh"
     open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-      - "security"
+    labels: ["dependencies", "security"]
     commit-message:
-      prefix: "⬆️ "
-      include: "scope"
-    reviewers:
-      - "Sawsqr68"
-    assignees:
-      - "Sawsqr68"
+      prefix: "⬆️"
+    assignees: ["Sawsqr68"]
+    reviewers: ["Sawsqr68"]
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
-      time: "09:00"
     open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "github-actions"
+    labels: ["dependencies", "github-actions"]
     commit-message:
-      prefix: "🔧 "
-      include: "scope"
+      prefix: "🔧"
