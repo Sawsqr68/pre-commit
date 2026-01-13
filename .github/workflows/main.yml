@@ -10,14 +10,17 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   main-windows:
-    uses: asottile/workflows/.github/workflows/tox.yml@v1.8.1
+    uses: asottile/workflows/.github/workflows/tox.yml@a24cbd9649beb9074bb3f36a598632264eda0803  # v1.8.1
     with:
       env: '["py310"]'
       os: windows-latest
   main-linux:
-    uses: asottile/workflows/.github/workflows/tox.yml@v1.8.1
+    uses: asottile/workflows/.github/workflows/tox.yml@a24cbd9649beb9074bb3f36a598632264eda0803  # v1.8.1
     with:
       env: '["py310", "py311", "py312", "py313"]'
       os: ubuntu-latest
