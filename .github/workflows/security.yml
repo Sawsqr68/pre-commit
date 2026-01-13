@@ -21,10 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
         
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
         with:
           python-version: '3.10'
           
@@ -36,21 +36,21 @@ jobs:
           
       - name: Run Safety check
         run: |
-          safety check --json --output safety-report.json || true
+          safety check --json --output safety-report.json
           
       - name: Run pip-audit
         run: |
-          pip-audit --desc --format json --output pip-audit-report.json || true
+          pip-audit --desc --format json --output pip-audit-report.json
           
       - name: Upload Safety report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
         if: always()
         with:
           name: safety-report
           path: safety-report.json
           
       - name: Upload pip-audit report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
         if: always()
         with:
           name: pip-audit-report
@@ -61,10 +61,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
         
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
         with:
           python-version: '3.10'
           
@@ -73,11 +73,11 @@ jobs:
         
       - name: Run Bandit Security Scanner
         run: |
-          bandit -r pre_commit/ -f json -o bandit-report.json || true
-          bandit -r pre_commit/ -f txt || true
+          bandit -r pre_commit/ -f json -o bandit-report.json
+          bandit -r pre_commit/ -f txt
           
       - name: Upload Bandit report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
         if: always()
         with:
           name: bandit-report
@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
         
       - name: Run Semgrep
         uses: returntocorp/semgrep-action@713efdd345f3035192eaa63f56867b88e63e4e5d  # v1
@@ -104,12 +104,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
         with:
           fetch-depth: 0
           
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
         with:
           python-version: '3.10'
           
@@ -133,13 +133,13 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
         
       - name: Initialize CodeQL
         uses: github/codeql-action/init@4bdb89f48054571735e3792627da6195c57459e2  # v3
         with:
           languages: python
-          queries: security-extended,security-and-quality
+          queries: +security-extended,+security-and-quality
           
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@4bdb89f48054571735e3792627da6195c57459e2  # v3
@@ -149,10 +149,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
         
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
         with:
           python-version: '3.10'
           
@@ -168,7 +168,7 @@ jobs:
           pip-licenses --format=markdown --output-file=licenses.md
           
       - name: Upload license report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
         with:
           name: license-report
           path: |

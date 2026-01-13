@@ -11,7 +11,7 @@ updates:
     open-pull-requests-limit: 10
     labels: ["dependencies", "security"]
     commit-message:
-      prefix: "⬆️"
+      prefix: "⬆️ "
     assignees: ["Sawsqr68"]
     reviewers: ["Sawsqr68"]
 
@@ -20,7 +20,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Riyadh"
     open-pull-requests-limit: 5
     labels: ["dependencies", "github-actions"]
     commit-message:
-      prefix: "🔧"
+      prefix: "🔧 "

@@ -4,12 +4,12 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 4.5.x   | :white_check_mark: |
-| < 4.5   | :x:                |
+| 4.5.1   | :white_check_mark: |
+| < 4.5.1 | :x:                |
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in this project, please report it by emailing the maintainers.
+If you discover a security vulnerability in this project, please report it by emailing the maintainers at [asottile@umich.edu](mailto:asottile@umich.edu).
 
 **Please do NOT create a public GitHub issue for security vulnerabilities.**
 
