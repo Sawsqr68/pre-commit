@@ -91,7 +91,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
+        uses: returntocorp/semgrep-action@713efdd345f3035192eaa63f56867b88e63e4e5d  # v1
         with:
           config: >-
             p/security-audit
@@ -136,13 +136,13 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@4bdb89f48054571735e3792627da6195c57459e2  # v3
         with:
           languages: python
           queries: security-extended,security-and-quality
           
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@4bdb89f48054571735e3792627da6195c57459e2  # v3
 
   license-scan:
     name: License Compliance
