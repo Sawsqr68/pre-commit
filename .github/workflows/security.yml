@@ -116,13 +116,13 @@ jobs:
       - name: Install detect-secrets
         run: pip install detect-secrets
         
-      - name: Run detect-secrets
+      - name: Run detect-secrets scan
         run: |
-          detect-secrets scan --all-files --force-use-all-plugins --baseline .secrets.baseline || true
-          
-      - name: Audit secrets
-        run: |
-          detect-secrets audit .secrets.baseline || true
+          if [ ! -f .secrets.baseline ]; then
+            detect-secrets scan --all-files --force-use-all-plugins --baseline .secrets.baseline
+          else
+            detect-secrets scan --baseline .secrets.baseline
+          fi
 
   codeql-analysis:
     name: CodeQL Analysis
